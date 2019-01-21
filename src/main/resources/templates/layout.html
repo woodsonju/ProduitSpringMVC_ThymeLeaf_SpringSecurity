@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html
+xmlns:th="http://www.thymeLeaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8" />
+<title>Gestion des produits</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+<body>
+	<header>
+		<div class="navbar navbar-default">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav">
+					<li><a th:href="@{/admin/form}">Créer un nouveau produit</a></li>
+					<li><a th:href="@{/user/index}">Chercher les Produits</a></li>
+					<!-- Afficher un utilisateur déjà authentifier. 
+					le dièse pour dire que httpServletRequest fait partie
+					des objets qui sont générés par la servlet. c'est une
+					reference vers httpServletRequest.
+					 th:href="@{/login?logout}" : permet de se deconnecter -->
+					<li>
+						<a th:href="@{/login?logout}" th:inline="text">
+							[[${#httpServletRequest.remoteUser}]]
+						</a>
+					</li> 
+				</ul>
+			</div>
+		</div>
+	</header>
+	<section layout:fragment="content">  <!-- va contenir les vus -->
+	</section>
+	<footer class="navbar-fixed-bottom">
+		<hr />
+		<div class="container">
+			<small>Copyright @2018</small>
+		</div>
+	</footer>
+</body>
+</html>

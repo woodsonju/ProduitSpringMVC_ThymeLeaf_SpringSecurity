@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html	
+	xmlns:th="http://www.thymeLeaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout"> <!-- Cette page est décoreée avec un layout qui 
+									s'appelle layout.html-->
+<head>
+<meta charset="UTF-8" />
+<title>Produits</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+<body>
+	<div class="container spacer" layout:fragment="content">
+		<div class="panel panel-primary"> 
+			<div class="panel-heading"> Confirmation</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label>ID: </label>
+					<label th:text="${produit.id}"></label>
+				</div>
+				<div class="form-group">
+					<label>Désignation: </label>
+					<label th:text="${produit.designation}"></label>
+				</div>
+				<div class="form-group">
+					<label>Prix: </label>
+					<label th:text="${produit.prix}"></label>
+				</div>
+				<div class="form-group">
+					<label>Quantité: </label>
+					<label th:text="${produit.quantite}"></label>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

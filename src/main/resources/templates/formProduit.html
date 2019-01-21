@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeLeaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout"> <!-- Cette page est décoreée avec un layout qui 
+									s'appelle layout.html-->
+<head>
+<meta charset="UTF-8" />
+<title>Produits</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+<body>
+	<div class="container col-md-6 col-md-offset-3 col-sm-12 col-xm-12 spacer" layout:fragment="content">
+		<div class="panel panel-primary"> 
+			<div class="panel-heading"> Saisie d'un produit</div>
+			<div class="panel-body">
+				<form th:action="@{/admin/saveProduit}" method="post">
+					<div class="form-group">
+						<label class="control-label">Désignation</label>
+						<input class="form-control" type="text" name="designation" th:value="${produit.designation}" />
+						<!-- Il va regarder dans la collection d'erreur, s'il y a une erreur
+						qui concerne le champs designation, il l'affiche -->
+						<span class="red" th:errors="${produit.designation}"></span> <!-- Il affiche l'erreur ici -->
+					</div>
+					<div class="form-group">
+						<label class="control-label">Prix</label>
+						<input class="form-control" type="text" name="prix" th:value="${produit.prix}"/>
+						<span class="red" th:errors="${produit.prix}"></span> <!-- Il affiche l'erreur ici -->
+					</div>
+					<div class="form-group">
+						<label class="control-label">Quantité</label>
+						<input class="form-control" type="text" name="quantite" th:value="${produit.quantite}"/>
+						<span class="red" th:errors="${produit.quantite}"></span> <!-- Il affiche l'erreur ici -->
+					</div>
+					<div>
+						<button class="btn btn-primary" type="submit">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

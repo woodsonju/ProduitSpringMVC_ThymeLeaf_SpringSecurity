@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html	
+	xmlns:th="http://www.thymeLeaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout"> <!-- Cette page est décoreée avec un layout qui 
+									s'appelle layout.html-->
+<head>
+<meta charset="UTF-8" />
+<title>Produits</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+<body>
+	<div class="container spacer" layout:fragment="content">
+		<div class="panel panel-danger"> 
+			<div class="panel-heading"> Acces Denied</div>
+			<div class="panel-body">
+				<h3 class="red">Vous n'êtes pas autorisé à acceder à cette ressource </h3>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
